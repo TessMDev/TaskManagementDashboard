@@ -43,7 +43,6 @@ import { selectVisibleTasks } from './state/tasks.selectors';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  tasks: Task[] = [];
   currTaskID = 5;
   orderByDueDate: boolean = false;
   categories: Category[] = [
@@ -95,8 +94,7 @@ export class AppComponent {
     // Dialog window closed
     dialogRef.afterClosed().subscribe(result => {
       // If user saved...
-      if (result != undefined) {
-        console.log('task ID: ' + task?.id);
+      if (result !== undefined) {
         if (task !== undefined) {
           // Update Task
           this.store.dispatch(TasksActions.updateTask({taskId: dialogTask.id, task: new Task(dialogTask.id, result.title, result.description, result.dueDate, result.category)}));
