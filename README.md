@@ -8,6 +8,3 @@ The purpose of this project is to display a working knowledge of Angular for a t
 ## Run me
 
 Just a quick `npm install` and then an `ng serve` should get you up and running on `http://localhost:4200/` c:
-
-
-![Screenshot of working dashboard](./public/Images/Screenshot.png)
