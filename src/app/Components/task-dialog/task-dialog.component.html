@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{isEditMode ? 'Edit Task' : 'Add Task'}}</h2>
+<mat-dialog-content class="task-dialog">
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput required [(ngModel)]="data.task.title" placeholder="Task title..."/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Due Date</mat-label>
+        <input matInput required [matDatepicker]="picker" [(ngModel)]="data.task.dueDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="data.task.description" placeholder="Task description..."/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select matInput [(ngModel)]="data.task.category">
+            <mat-option value="Personal">Personal</mat-option>
+            <mat-option value="Work">Work</mat-option>
+            <mat-option value="Urgent">Urgent</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-flat-button [mat-dialog-close]="task()" [disabled]="data.task.title.length == 0 || data.task.dueDate == null">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,140 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .mdc-card {
+        margin: 0 10px;
+    }
+    .filter-card {
+        width: 25%;
+        max-width:260px;
+        min-width:260px;
+
+        .toggle-section {
+            padding-top: 20px;
+        }
+    }
+    .list-card {
+        width: 100%;
+
+        .task-list-item {
+            border-bottom: 1px solid #2d2d2d;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+
+            .mdc-list-item__primary-text::before {
+                height: 28px !important;
+            }
+        
+
+            .item-title {
+
+            }
+            .item-description {
+                color: #ccc;
+                font-weight: 200;
+                font-size: 0.9rem;
+            }
+            .item-duedate {
+                font-size: 12px;
+                position: absolute;
+                right:0;
+                top:16px;
+                .label {
+                    color: #777;
+                    font-weight: 200;
+                    margin-right:3px;
+                }
+            }
+            .item-category {
+                color: #777;
+                font-weight: 200;
+                font-size: 0.9rem;
+                margin-left: 10px;
+            }
+
+            .task-buttons {
+                position: absolute;
+                right: 0;
+                top: 32px;
+                font-weight: 200;
+                font-size: 0.8rem;
+                color: var(--mdc-list-list-item-label-text-color);
+
+                .edit-button, .delete-button {
+                    cursor: pointer;
+                    .mat-icon {
+                        height: 14px;
+                        width: 14px;
+                        font-size: 14px;
+                        margin-bottom:-2px;
+                    }
+                }
+
+                .edit-button {
+                    margin-right: 10px;
+                }
+                .delete-button {
+                    color: #c03535;
+                }
+            }
+        }
+
+        .add-button {
+            margin-left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .deferred-loading {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            .loading-container {
+                position: absolute;
+                margin-left:50%;
+                top: 50px;
+                transform: translate(-50%, 0);
+                .spinner {
+                    width: 40px !important;
+                    height: 40px !important;
+                    display: inline-block;
+                    margin-bottom: -12px;
+                    margin-right: 15px;
+                }
+            }
+            
+        }
+
+        .order-toggle-container {
+            position: absolute;
+            right: 12px; 
+            top: 14px;
+
+            .label {
+                font-size: 0.9rem;
+                margin-right: 7px;
+                color: #aaa;
+            }
+        }
+    }
+}
+
+.mat-toolbar {
+    .title {
+        width: 100%;
+        max-width: 1570px;
+        margin: auto;
+    }
+}
+
+.toggle-section {
+    .toggle-container {
+        text-align: right;
+        .category-toggle {
+            margin: 10px 15px;
+        }
+    }
+}
